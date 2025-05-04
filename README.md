@@ -190,3 +190,21 @@ All incoming requests will be validated and sanitized to prevent injection attac
 Payments will be processed through a trusted third-party payment gateway, ensuring that transaction data is handled securely and compliant with industry standards (e.g., PCI-DSS).
 
 By implementing these security measures, the project aims to protect user data, maintain trust, and ensure compliance with best practices in backend development.
+
+
+## 🔄 CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines are essential for automating the process of testing, building, and deploying code changes. They ensure that updates to the codebase are automatically tested and deployed in a consistent and reliable manner.
+
+In this project, the CI/CD pipeline helps streamline backend development by:
+- Automatically running tests to catch bugs early before they reach production.
+- Building and deploying Docker containers to ensure consistent environments across development, staging, and production.
+- Speeding up the feedback loop, enabling faster iterations and more reliable releases.
+
+### 🛠️ Tools Used
+- **GitHub Actions**: Automates tasks such as running tests and deploying to environments on every push or pull request.
+- **Docker**: Ensures consistency by containerizing the application and its dependencies.
+- **Docker Compose**: Simplifies multi-container deployment setups (e.g., backend + PostgreSQL + Redis).
+- **Heroku / AWS / DigitalOcean (optional)**: Can be used as deployment targets, depending on the hosting preference.
+
+Implementing a CI/CD pipeline significantly improves the software development lifecycle, reduces manual errors, and increases deployment efficiency.
