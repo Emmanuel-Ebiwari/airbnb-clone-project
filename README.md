@@ -56,3 +56,87 @@ Manages infrastructure, deployment pipelines, and automation. Ensures the applic
 
 ### 8. Quality Assurance (QA) Engineer
 Tests the application for bugs and usability issues. Develops test plans, automates tests when possible, and ensures the product meets quality standards before release.
+
+
+## 🗄️ Database Design
+
+The database for this project is designed to support core features such as user management, property listings, bookings, payments, and reviews. Below are the key entities, important fields, and their relationships.
+
+### 1. Users
+Represents the people using the platform (both guests and hosts).
+
+**Key Fields:**
+- `id`: Primary key identifier
+- `name`: Full name of the user
+- `email`: Unique email address
+- `password`: Hashed password for authentication
+- `is_host`: Boolean flag to indicate host status
+
+**Relationships:**
+- A user can create multiple properties.
+- A user can make multiple bookings.
+- A user can leave multiple reviews.
+
+---
+
+### 2. Properties
+Represents the properties listed by hosts for rent.
+
+**Key Fields:**
+- `id`: Primary key identifier
+- `title`: Title of the property
+- `description`: Detailed information about the property
+- `price_per_night`: Cost of booking per night
+- `host_id`: Foreign key to the User (host)
+
+**Relationships:**
+- A property is owned by one user (host).
+- A property can have many bookings.
+- A property can receive many reviews.
+
+---
+
+### 3. Bookings
+Represents the reservations made by users for properties.
+
+**Key Fields:**
+- `id`: Primary key identifier
+- `user_id`: Foreign key to the User (guest)
+- `property_id`: Foreign key to the Property
+- `start_date`: Check-in date
+- `end_date`: Check-out date
+
+**Relationships:**
+- A booking belongs to one user and one property.
+- A booking is associated with a payment.
+
+---
+
+### 4. Payments
+Tracks the payment transactions for bookings.
+
+**Key Fields:**
+- `id`: Primary key identifier
+- `booking_id`: Foreign key to the Booking
+- `amount`: Total amount paid
+- `status`: Payment status (e.g., completed, pending, failed)
+- `timestamp`: Date and time of the transaction
+
+**Relationships:**
+- A payment is linked to one booking.
+
+---
+
+### 5. Reviews
+Allows users to leave feedback on properties.
+
+**Key Fields:**
+- `id`: Primary key identifier
+- `user_id`: Foreign key to the User (reviewer)
+- `property_id`: Foreign key to the Property
+- `rating`: Numerical rating (e.g., 1–5)
+- `comment`: Textual review content
+
+**Relationships:**
+- A review belongs to one user and one property.
+
