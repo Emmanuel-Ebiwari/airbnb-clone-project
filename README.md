@@ -165,3 +165,28 @@ Includes REST and GraphQL APIs documented using the OpenAPI standard. It provide
 
 ### ⚡ Database Optimization
 Uses techniques such as indexing and caching to improve data retrieval speed and overall performance. This ensures a smooth and scalable user experience as the application grows.
+
+
+## 🔐 API Security
+
+Securing the backend APIs is critical to protecting sensitive data, maintaining system integrity, and ensuring a safe user experience. The following key security measures will be implemented in the Airbnb Clone backend:
+
+### 🔑 Authentication
+All API endpoints will require user authentication using secure token-based methods such as JWT (JSON Web Tokens). This ensures that only registered users can access protected resources, safeguarding user accounts from unauthorized access.
+
+### 🛡️ Authorization
+Role-based access control (RBAC) will be used to ensure that users can only perform actions permitted by their role (e.g., only hosts can manage listings). This prevents users from accessing or modifying resources they shouldn't have permission to.
+
+### 🚫 Rate Limiting
+Rate limiting will be applied to restrict the number of requests a user or IP address can make within a certain timeframe. This protects the API from abuse, denial-of-service (DoS) attacks, and brute-force attempts.
+
+### 🔒 Data Encryption
+Sensitive data such as passwords will be hashed using strong algorithms (e.g., bcrypt), and HTTPS will be enforced for all communication between clients and the server. This ensures user data, including login credentials and payment information, remains secure in transit and at rest.
+
+### 🧪 Input Validation & Sanitization
+All incoming requests will be validated and sanitized to prevent injection attacks such as SQL injection or cross-site scripting (XSS). This helps maintain the integrity and security of the backend system.
+
+### 🧾 Secure Payment Handling
+Payments will be processed through a trusted third-party payment gateway, ensuring that transaction data is handled securely and compliant with industry standards (e.g., PCI-DSS).
+
+By implementing these security measures, the project aims to protect user data, maintain trust, and ensure compliance with best practices in backend development.
