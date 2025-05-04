@@ -1,4 +1,4 @@
-# airbnb-clone-project
+# AIRBNB CLONE PROJECT
 
 ## Team Roles
 
